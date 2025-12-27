@@ -53,7 +53,7 @@ public class SimulateBattleImpl implements SimulateBattle {
 
                 Unit target = attacker.getProgram() == null ? null : attacker.getProgram().attack();
 
-                // лог всегда после попытки атаки (если цель null — лог не печатаем, чтобы не спамить)
+                // лог всегда после попытки атаки (если цель null, лог не печатаем, чтобы не спамить)
                 if (target != null) {
                     if (printBattleLog != null) {
                         printBattleLog.printBattleLog(attacker, target);
@@ -63,10 +63,9 @@ public class SimulateBattleImpl implements SimulateBattle {
                 }
             }
 
-            // если одна из сторон в раунде не смогла атаковать — она "не способна сделать ход"
             if (!playerDidAttack || !computerDidAttack) break;
 
-            // дополнительная страховка: если у одной армии нет живых — конец
+            // дополнительная страховка если у одной армии нет живых, то конец
             if (!hasAlive(playerUnits) || !hasAlive(computerUnits)) break;
         }
     }
