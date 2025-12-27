@@ -8,7 +8,7 @@
 - `SuitableForAttackUnitsFinder.getSuitableUnits(...)` : отбор целей, доступных для атаки
 - `UnitTargetPathFinder.getTargetPath(...)` : поиск кратчайшего пути на поле (с препятствиями)
 
-> Готовый JAR лежит в `release/heroes-student-task.jar`.
+> Собранный JAR лежит в `release/heroes-student-task.jar`.
 
 Структура
 ```text
