@@ -54,7 +54,7 @@ heroes-student-task/
 
 ### Через консоль
 ```bash
-javac -encoding UTF-8 -cp libs/heroes_task_lib-1.0-SNAPSHOT.jar -d out $(find src -name "*.java")
+javac -encoding UTF-8 -cp libs/heroes_task_lib.jar -d out $(find src -name "*.java")
 jar cf heroes-student-task.jar -C out .
 ```
 
