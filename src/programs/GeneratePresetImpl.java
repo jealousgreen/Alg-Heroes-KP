@@ -17,7 +17,21 @@ import java.util.*;
  * Сложность: O(n log n + m), где n — число типов, m — число юнитов в результате.
  */
 public class GeneratePresetImpl implements GeneratePreset {
-
+    /**
+     * Метод формирует армию компьютера на основе списка доступных типов юнитов
+     * и ограничения на суммарную стоимость армии.
+     *
+     * Основная цель алгоритма получить максимально эффективный набор юнитов
+     * при соблюдении следующих ограничений:
+     * 1) суммарная стоимость армии не превышает maxPoints;
+     * 2) количество юнитов каждого типа не превышает 11;
+     * 3) приоритет отдаётся юнитам с лучшим соотношением атаки к стоимости,
+     *    при равенстве здоровью к стоимости.
+     *
+     * @param unitList список доступных типов юнитов (по одному объекту каждого типа)
+     * @param maxPoints максимальное допустимое количество очков армии
+     * @return объект Army с подобранным набором юнитов
+     */
     private static final int MAX_PER_TYPE = 11;
     private static final int FIELD_LEFT_X_MIN = 0;
     private static final int FIELD_LEFT_X_MAX = 2;
@@ -29,7 +43,7 @@ public class GeneratePresetImpl implements GeneratePreset {
             return new Army(Collections.emptyList());
         }
 
-        // Считаем "эффективность" для каждого типа.
+        // Считаем эффективность для каждого типа.
         List<UnitTypeScore> types = new ArrayList<>();
         for (Unit u : unitList) {
             if (u == null) continue;
@@ -96,7 +110,7 @@ public class GeneratePresetImpl implements GeneratePreset {
         // Расставляем координаты в зоне компьютера (левые 3 столбца), без пересечений.
         placeUnitsLeft(result);
 
-        Army army = new Army();
+         army = new Army();
         army.setUnits(result);
         army.setPoints(maxPoints - pointsLeft);
         return army;
