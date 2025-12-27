@@ -23,12 +23,12 @@
 
 ## Сборка JAR
 
-Проект не требует Gradle для сборки JAR с реализациями (достаточно `javac` + `jar`), но если у вас настроен Gradle/IDEA — тоже можно.
+Проект не требует Gradle для сборки JAR с реализациями (достаточно `javac` + `jar`).
 
 ### Через IntelliJ IDEA
 `Build -> Build Artifacts -> JAR`
 
-### Через консоль (пример)
+### Через консоль
 ```bash
 javac -encoding UTF-8 -cp libs/heroes_task_lib-1.0-SNAPSHOT.jar -d out $(find src -name "*.java")
 jar cf heroes-student-task.jar -C out .
