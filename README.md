@@ -3,10 +3,10 @@
 
 В этом репозитории реализованы 4 ключевых алгоритма для проекта **Heroes Battle**:
 
-- `GeneratePreset.generate(...)` — генерация армии компьютера
-- `SimulateBattle.simulate(...)` — симуляция боя по раундам
-- `SuitableForAttackUnitsFinder.getSuitableUnits(...)` — отбор целей, доступных для атаки
-- `UnitTargetPathFinder.getTargetPath(...)` — поиск кратчайшего пути на поле (с препятствиями)
+- `GeneratePreset.generate(...)` : генерация армии компьютера
+- `SimulateBattle.simulate(...)` : симуляция боя по раундам
+- `SuitableForAttackUnitsFinder.getSuitableUnits(...)` : отбор целей, доступных для атаки
+- `UnitTargetPathFinder.getTargetPath(...)` : поиск кратчайшего пути на поле (с препятствиями)
 
 > Готовый JAR лежит в `release/heroes-student-task.jar`.
 
