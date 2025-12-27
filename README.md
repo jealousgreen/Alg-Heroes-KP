@@ -137,6 +137,6 @@ jar cf heroes-student-task.jar -C out .
 **Сложность:**
 - `V = W·H`, `E ≈ 8V`
 - A\* с priority queue: `O(E log V) ≈ O(V log V)`  
-Итог: **`O((W·H) log(W·H))`**, соответствует требованию.
+Итог: **`O((W·H) log(W·H))`**.
 
 ---
