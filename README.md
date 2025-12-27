@@ -1,4 +1,5 @@
 # Heroes Student Task
+[![CodeQL Advanced](https://github.com/jealousgreen/Alg-Heroes-KP/actions/workflows/codeql.yml/badge.svg)](https://github.com/jealousgreen/Alg-Heroes-KP/actions/workflows/codeql.yml)
 
 В этом репозитории реализованы 4 ключевых алгоритма для проекта **Heroes Battle**:
 
