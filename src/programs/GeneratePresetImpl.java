@@ -45,11 +45,11 @@ public class GeneratePresetImpl implements GeneratePreset {
             if (c1 != 0) return c1;
             int c2 = Double.compare(b.hpScore, a.hpScore);
             if (c2 != 0) return c2;
-            // стабильный "тай-брейк" — по стоимости (дешевле раньше)
+            
             return Integer.compare(a.template.getCost(), b.template.getCost());
         });
 
-        // Для добивки по выживаемости — заранее найдём лучший по hp/стоимость
+        // Для добивки по выживаемости заранее найдём лучший по hp/стоимость
         UnitTypeScore bestHp = null;
         for (UnitTypeScore t : types) {
             if (bestHp == null || t.hpScore > bestHp.hpScore) bestHp = t;
@@ -59,7 +59,7 @@ public class GeneratePresetImpl implements GeneratePreset {
         Map<String, Integer> countByType = new HashMap<>();
         int pointsLeft = maxPoints;
 
-        // Основной жадный проход: набираем максимально эффективных по атаке
+        // Основной проход: набираем максимально эффективных по атаке
         for (UnitTypeScore t : types) {
             if (pointsLeft <= 0) break;
             String type = safeType(t.template);
@@ -93,7 +93,7 @@ public class GeneratePresetImpl implements GeneratePreset {
             }
         }
 
-        // Расставляем координаты в зоне компьютера (левые 3 столбца x=0..2), без пересечений.
+        // Расставляем координаты в зоне компьютера (левые 3 столбца), без пересечений.
         placeUnitsLeft(result);
 
         Army army = new Army();
@@ -138,7 +138,7 @@ public class GeneratePresetImpl implements GeneratePreset {
                 }
             }
             if (x > FIELD_LEFT_X_MAX) {
-                // места не хватило (теоретически), оставим как есть
+                // если места не хватило, оставим как есть
                 break;
             }
             occupied[x - FIELD_LEFT_X_MIN][y] = true;
