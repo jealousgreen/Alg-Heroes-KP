@@ -10,6 +10,29 @@
 
 > Готовый JAR лежит в `release/heroes-student-task.jar`.
 
+Структура
+```text
+heroes-student-task/
+├── .github/
+│   └── workflows/
+│       └── codeql.yml
+│
+├── libs/
+│   └── heroes_task_lib.jar
+│
+├── release/
+│   └── heroes-student-task.jar
+│
+├── src/
+│   └── programs/
+│       ├── GeneratePresetImpl.java
+│       ├── SimulateBattleImpl.java
+│       ├── SuitableForAttackUnitsFinderImpl.java
+│       └── UnitTargetPathFinderImpl.java
+│
+├── .gitignore
+└── README.md
+```
 ---
 
 ## Как проверить в игре
